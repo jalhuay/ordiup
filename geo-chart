@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>Repositorio de Universidades Peruanas | Distribución geográfica</title>
+</head>
+<body>
+
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type='text/javascript'>
+     google.charts.load('current', {
+       'packages': ['geochart'],
+       'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+     });
+     google.charts.setOnLoadCallback(drawMarkersMap);
+
+      function drawMarkersMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['City',   'Repositorios'],
+        ['Arequipa',      1],
+        ['Callao',      1],
+        ['Chachapoyas',      1],
+        ['Chiclayo',      2],
+        ['Huancayo',     4],
+        ['Ica',   3],
+        ['Iquitos',     1],
+        ['Juliaca',     1],
+        ['Lambayeque',     1],
+        ['Lima',     28],
+        ['Lircay',     1],
+        ['Piura',     1],
+        ['Tacna',     2],
+        ['Trujillo',     1],     
+     
+      ]);
+
+      var options = {
+        region: 'PE',
+        displayMode: 'markers',
+       backgroundColor: '#81d4fa',
+        colorAxis: {colors: ['orange', 'red']},
+
+      };
+      legend = 
+      {textStyle: {color: 'blue', fontSize: 1}}
+
+      var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    };
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
